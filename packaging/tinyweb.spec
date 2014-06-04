@@ -22,9 +22,12 @@ make %{?_smp_mflags}
 
 %install 
 install -d %{buildroot}/%{_bindir}
+install -d %{buildroot}/%{_datadir}/%{name}
 install -m 0755 %{name} %{buildroot}/%{_bindir}
 install -m 0755 cgi-getcookie %{buildroot}/%{_bindir}
 install -m 0755 cgi-getfield %{buildroot}/%{_bindir}
+install -m 0644 server.pem %{buildroot}/%{_datadir}/%{name}
+
 
 %files
 %manifest %{name}.manifest
@@ -32,3 +35,4 @@ install -m 0755 cgi-getfield %{buildroot}/%{_bindir}
 %{_bindir}/%{name}
 %{_bindir}/cgi-getcookie
 %{_bindir}/cgi-getfield
+%{_datadir}/%{name}
