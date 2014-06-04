@@ -7,6 +7,7 @@ Group:		Development/Testing
 License:	GPL-2.0
 source:		%{name}-%{version}.tar.gz
 source1001:	%{name}.manifest
+Requires:	libopenssl-devel
 
 %description 
 Web server that provides test resources for web TCs
@@ -15,6 +16,7 @@ Web server that provides test resources for web TCs
 %prep 
 %setup -q 
 cp %{SOURCE1001} .
+
 
 %build
 make %{?_smp_mflags}
